@@ -2,6 +2,6 @@ class Article < ApplicationRecord
 	validates :title, :author, :content, presence: true
 	
 	def details
-		"#{title} - #{author}"
+		"#{title} by #{author}"
 	end
 end
