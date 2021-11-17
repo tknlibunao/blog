@@ -25,6 +25,11 @@
 					<%= link_to edit_article_path(article.id) do %>
 						Edit
 					<% end %>
+					|
+					
+					<%= link_to article_path(article.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+						Delete
+					<% end %>
 				</td>
 			</tr>
 		<% end %>
