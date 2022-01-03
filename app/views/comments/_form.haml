@@ -1,0 +1,9 @@
+= form_with model: [@article, @comment] do |f|
+  = f.label :content
+  = f.text_area :content
+  - if f.object.errors[:content].present?
+    %span= f.object.errors[:content].to_sentence
+    %br
+  %br
+
+  = f.submit
