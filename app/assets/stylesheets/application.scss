@@ -14,4 +14,87 @@
  *= require_self
  */
 
+// Materialize CSS
 @import "materialize";
+
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Averia+Libre&family=Karla&family=Karma&family=Poppins&family=Syne&display=swap');
+// Font Usage
+
+// font-family: 'Arvo', serif;
+// font-family: 'Averia Libre', cursive;
+// font-family: 'Karla', sans-serif;
+// font-family: 'Karma', serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Syne', sans-serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Karla', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// Font Weight
+
+.bold-text {
+  font-weight: bold;
+}
+
+.italic-text {
+  font-weight: italic;
+}
+
+// Button Color
+
+.btn-amber {
+  @extend .amber, .darken-4;
+
+  &:hover {
+    @extend .amber, .darken-2;
+  }
+}
+
+// Home Page
+
+.home-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+
+  &:before {
+    width: 100%;
+    height: 100vh;
+    background-image: image-url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px) brightness(0.5);
+    position: absolute;
+    z-index: -1;
+    content: '';
+  }
+
+  .home-slogan {
+    min-height: 70vh;
+    font-size: 2.5rem;
+  }
+}
