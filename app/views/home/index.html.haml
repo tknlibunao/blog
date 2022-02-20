@@ -1,8 +1,18 @@
-%h1 Home Page
+%div{class: "home-banner"}
+  - if user_signed_in?
+    %p= "Hello, @" + current_user.username + "!"
+    
+    %br
 
-- if user_signed_in?
-  %p Hello, User!
-- else
-  = link_to 'Log In', new_user_session_path
-  %br
-  = link_to 'Sign Up', new_user_registration_path
+    %p= "You are " + [current_user.first_name, current_user.last_name].join(' ')
+
+  - else
+    %div{class: "container home-slogan"}
+      %span{class: "white-text italic-text"}
+        Got some story to share?
+        %br
+        Type2Me is a platform made just for you!
+      %br
+      %br
+      %br
+      = link_to 'Get Started', new_user_session_path, class: "btn-large btn-amber"
