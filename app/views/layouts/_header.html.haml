@@ -1,0 +1,17 @@
+%div{class: "navbar-fixed"}
+  %nav
+    %div{class: "nav-wrapper teal darken-4"}
+      = link_to 'Type2Me', root_path, class: "brand-logo"
+      %ul{class: "right hide-on-med-and-down", id: "nav-mobile"}
+        -if user_signed_in?
+          %li
+            = link_to 'Profile', profile_path(current_user.id)
+          %li
+            = link_to 'Feed', articles_path
+          %li
+            = link_to 'Log Out', destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to 'Log In', new_user_session_path
+          %li
+            = link_to 'Sign Up', new_user_registration_path
