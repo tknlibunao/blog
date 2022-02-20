@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Type2Me</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,10 +16,15 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+
     <%= flash[:notice] %>
     <%= flash[:error] %>
-  
-    <%= yield %>
+
+    <main>
+      <%= yield %>
+    </main>
+    
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
